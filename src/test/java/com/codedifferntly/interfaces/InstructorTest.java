@@ -40,14 +40,14 @@ public class InstructorTest{
     @Test
     public void testLecture() {
         Learner[] students = {student, student2};
-        instructor.lecture(students, 1.1);
+        instructor.lecture(students, 2.0);
 
         Double actual = student.getTotalStudyTime();
         Double actual2 = student2.getTotalStudyTime();
         System.out.println(actual);
         System.out.println(actual2);
 
-        Double expected = 1.1;
+        Double expected = 2.0;
 
         Assert.assertEquals(expected, actual2);
     }
