@@ -17,7 +17,7 @@ public class PeopleTest extends TestCase {
     public void setUp() {
         personArrayList = new ArrayList<>();
         people = new People();
-        person = new Person(1234567890);
+        person = new Person("Person", 1234567890);
     }
 
     @Test

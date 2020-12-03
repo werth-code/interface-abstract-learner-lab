@@ -8,7 +8,7 @@ public class TestPerson  {
     @Test
     public void testConstructor() {
         //GIVEN
-        Person person = new Person(123456789);
+        Person person = new Person("Mike", 123456789);
         //WHEN
         long expected = 123456789;
         long actual = person.getId();
@@ -21,7 +21,7 @@ public class TestPerson  {
     @Test
     public void testTestSetName() {
         //GIVEN
-        Person person = new Person(123456789);
+        Person person = new Person("Mike", 123456789);
         person.setName("Matt");
         //WHEN
         String expected = "Matt";

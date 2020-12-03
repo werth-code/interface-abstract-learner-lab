@@ -9,7 +9,7 @@ public class StudentTest {
 
     @Before
     public void setUp() {
-        student = new Student(123456789);
+        student = new Student("Sharon", 123456789);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class StudentTest {
     @Test
     public void testInheritance() {
         //GIVEN
-        Person studentIsAPerson = new Student(222222);
+        Person studentIsAPerson = new Student("james", 222222);
         System.out.println(studentIsAPerson.id);
         //WHEN
         long expected = 222222;

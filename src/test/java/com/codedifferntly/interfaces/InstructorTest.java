@@ -11,9 +11,9 @@ public class InstructorTest{
 
     @Before
     public void setup() {
-        instructor = new Instructor(001100);
-        student = new Student(111111);
-        student2 = new Student(222222);
+        instructor = new Instructor("amanda", 001100);
+        student = new Student("Mia", 111111);
+        student2 = new Student("Gabby", 222222);
     }
 
     @Test

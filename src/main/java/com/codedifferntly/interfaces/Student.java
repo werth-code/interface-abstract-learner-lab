@@ -3,8 +3,8 @@ package com.codedifferntly.interfaces;
 public class Student extends Person implements Learner {
     double totalStudyTime;
 
-    public Student(long id) {
-        super(id);
+    public Student(String name, long id) {
+        super(name, id);
     }
 
     @Override
