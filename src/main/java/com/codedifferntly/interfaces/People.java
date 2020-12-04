@@ -2,44 +2,46 @@ package com.codedifferntly.interfaces;
 
 import java.util.ArrayList;
 
-public class People {
+//// TODO: 12/4/20 Add type params to methods? GENERICS
+
+public class People<E> { //// TODO: 12/4/20 Make Abstract??
     private ArrayList<Person> personList;
 
-    public People() {
+    public People () {
         this.personList = new ArrayList<>();
     }
 
-    public void add(Person person) {
+    public <E> void add(Person person) {
         personList.add(person);
     }
 
-    public Person findByID(Long id) {
+    public <E> Person findByID(Long id) {
         for(Person person : personList) {
             if(id.equals(person.getId())) return person;
         }
         return null;
     }
 
-    public void remove(Person person) {
+    public <E> void remove(Person person) {
         personList.remove(person);
     }
 
-    public void remove(Long id) {
+    public <E> void remove(Long id) {
         for (Person person: personList) {
             if(id.equals(person.getId())) personList.remove(person);
             break;
         }
     }
 
-    public Integer getCount() {
+    public <E> Integer getCount() {
         return personList.size();
     }
 
-    public Object[] getArray() {
+    public <E> Object[] getArray() {
         return personList.toArray();
     }
 
-    public void removeAll() {
+    public <E> void removeAll() {
         personList.clear();
     }
 
