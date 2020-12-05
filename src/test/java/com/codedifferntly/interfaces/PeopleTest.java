@@ -15,8 +15,8 @@ public class PeopleTest extends TestCase {
 
     @Before
     public void setUp() {
+        people = Students.getInstance();
         personArrayList = new ArrayList<>();
-        people = new People();
         person = new Person("Person", 1234567890);
     }
 
@@ -28,6 +28,7 @@ public class PeopleTest extends TestCase {
         long id = person.getId();
         Person actual = people.findByID(id);
         Person expected = person;
+        System.out.println(expected);
         System.out.println(actual);
         //THEN
         Assert.assertEquals(expected, actual);
@@ -82,25 +83,23 @@ public class PeopleTest extends TestCase {
     @Test
     public void testGetCount() {
         //GIVEN
-        people.add(person);
         //WHEN
         Integer actual = people.getCount();
-        Integer expected = 1;
+        Integer expected = 6;
         //THEN
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
-    public void testGetArray() {
-        //GIVEN
-        people.add(person);
-        //WHEN
-        System.out.println(Arrays.toString(people.getArray()));
-        String actual = Arrays.toString(people.getArray());
-        String expected = "[" + person.toString() + "]";
-        //THEN
-        Assert.assertEquals(expected, actual);
-    }
+//    @Test
+//    public void testGetArray() {
+//        //GIVEN
+//        //WHEN
+//        System.out.println(Arrays.toString(people.getArray()));
+//        Person[] actual = (Person[]) people.getArray();
+//        String expected = "a";
+//        //THEN
+//        Assert.assertEquals(expected, actual);
+//    }
 
     @Test
     public void testRemoveAll() {

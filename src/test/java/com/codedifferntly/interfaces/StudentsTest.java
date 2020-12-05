@@ -7,19 +7,20 @@ public class StudentsTest {
 
     @Test
     public void testGetInstance() {
-        //GIVEN I add Linda to my Students INSTANCE variable
-        Person linda = new Person("Linda", 123);
-        Students.getInstance().add(linda);
+        //GIVEN I have an instance..
         //WHEN
-        Person actual = linda;
+        String actual = Students.getInstance().findByID((long)005).getName();
         System.out.println(actual);
 
-        System.out.println(Students.getInstance().getCount());
-
-        Person expected = Students.getInstance().findByID((long)123);
+        String expected = "Amirah";
         System.out.println(expected);
 
         //THEN
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetArray() {
+        System.out.println(Students.getInstance().getArray().toString());
     }
 }

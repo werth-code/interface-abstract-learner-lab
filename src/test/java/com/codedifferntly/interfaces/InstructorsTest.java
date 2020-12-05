@@ -7,11 +7,11 @@ public class InstructorsTest {
 
     @Test
     public void testGetINSTANCE() {
+        //GIVEN I have an instance..
         //WHEN
         Integer actual = Instructors.getInstance().getCount();
         System.out.println(actual);
         Integer expected = 4;
-
         //THEN
         Assert.assertEquals(expected, actual);
     }

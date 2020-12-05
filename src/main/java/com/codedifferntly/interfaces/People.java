@@ -2,16 +2,14 @@ package com.codedifferntly.interfaces;
 
 import java.util.ArrayList;
 
-//// TODO: 12/4/20 Add type params to methods? GENERICS
+abstract class People<E extends Person> {
+    private ArrayList<E> personList;
 
-public class People<E> { //// TODO: 12/4/20 Make Abstract??
-    private ArrayList<Person> personList;
-
-    public People () {
+    public People() {
         this.personList = new ArrayList<>();
     }
 
-    public <E> void add(Person person) {
+    public void add(E person) {
         personList.add(person);
     }
 
@@ -22,26 +20,24 @@ public class People<E> { //// TODO: 12/4/20 Make Abstract??
         return null;
     }
 
-    public <E> void remove(Person person) {
+    public void remove(E person) {
         personList.remove(person);
     }
 
-    public <E> void remove(Long id) {
+    public void remove(Long id) {
         for (Person person: personList) {
             if(id.equals(person.getId())) personList.remove(person);
             break;
         }
     }
 
-    public <E> Integer getCount() {
+    public Integer getCount() {
         return personList.size();
     }
 
-    public <E> Object[] getArray() {
-        return personList.toArray();
-    }
+    abstract E[] getArray();
 
-    public <E> void removeAll() {
+    public  void removeAll() {
         personList.clear();
     }
 

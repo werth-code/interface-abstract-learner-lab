@@ -1,6 +1,9 @@
 package com.codedifferntly.interfaces;
 
-public class Students extends People {
+import java.util.Arrays;
+import java.util.List;
+
+public class Students extends People<Student> {
     private static final Students INSTANCE = new Students();
 
     private Students() {
@@ -15,4 +18,20 @@ public class Students extends People {
     public static Students getInstance() {
         return INSTANCE;
     }
+
+    //TODO  cannot call itself to turn into an array!
+
+    @Override
+    public Student[] getArray() {
+        //Student[] stuArray = Arrays.copyOf(Students.getInstance(), Students.getInstance().getCount(), Student[].class);
+
+        List<Object> objList = Arrays.asList(Students.getInstance());
+        Student[] stuArray = new Student[objList.size()];
+        objList.toArray(stuArray);
+
+        Arrays.stream(stuArray).forEach(ele -> System.out.println(ele));
+
+        return stuArray;
+    }
 }
+
